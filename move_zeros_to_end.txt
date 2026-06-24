@@ -1,0 +1,38 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+	vector<int> v={1,0,4,0,0,7}'
+	int i=0;
+	for(int j=0;j<v.size();j++){
+	if(v[j]!=0){
+		swap(v[i],v[j]);
+		i++;
+	}
+	}
+
+}
+
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+	vector<int> v={1,0,4,0,0,7};
+	int i=0;
+	for(int j=0;j<v.size();j++){
+	if(v[j]!=0){
+		v[i]=v[j];
+		i++;
+	}
+	}
+	while(i<v.size()){
+	    v[i]=0;
+	    i++;
+	}
+	for(int i:v){
+	    cout<<i<<" ";
+	}
+
+}

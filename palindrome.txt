@@ -1,0 +1,25 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+bool isPalindrome(vector<int>& v){
+    int left=0;
+	int right=v.size()-1;
+    while(left<right){
+	    if(v[left]!=v[right]){
+	        return false;
+	    }
+	    left++;right--;
+	}
+	return true;
+}
+int main(){
+	vector<int> v={1,2,1};
+	bool ans=isPalindrome(v);
+	if(ans){
+	    cout<<"true";
+	}
+	else{
+	    cout<<"false";
+	}
+	return 0;
+}
