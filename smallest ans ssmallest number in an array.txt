@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+int main() {
+    vector<int> v = {1,1};
+
+    int smallest = INT_MAX;
+    int s_smallest = INT_MAX;
+
+    for(int x : v){
+        if(x < smallest){
+            s_smallest = smallest;
+            smallest = x;
+        }
+        else if(x > smallest && x < s_smallest){
+            s_smallest = x;
+        }
+    }
+
+    if(s_smallest == INT_MAX)
+        cout << -1;
+    else
+        cout << smallest << " " << s_smallest;
+}

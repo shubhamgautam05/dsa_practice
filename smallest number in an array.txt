@@ -1,0 +1,17 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+int main() {
+    // Write C++ code here
+    vector<int> v={8,2,3,4,9,5,1};
+    int smallest=v[0];
+    for(int i=1;i<v.size();i++){
+        if(v[i]<v[i-1]){
+            smallest=v[i];
+        }
+    }
+    cout<<smallest;
+    
+
+    return 0;
+}
