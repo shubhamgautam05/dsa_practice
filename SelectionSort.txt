@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void selectionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr[i], arr[minIndex]);
+    }
+    for (int x : arr) {
+        cout << x << " ";
+    }
+}
+int main() {
+    // Write C++ code here
+    vector<int> v={8,45,2,5,234,5,272,0,86,5,1,9};
+    selectionSort(v);
+
+    return 0;
+}

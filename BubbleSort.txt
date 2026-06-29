@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+void bubbleSort(vector<int>& arr){
+    for(int i=0;i<arr.size();i++){
+        bool swapped=false;
+        for(int j=0;j<arr.size()-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
+                swapped=true;
+            }
+        }
+        if(!swapped) break;
+    }
+    for(int i:arr){
+        cout<<i<<" ";
+    }
+}
+int main() {
+    // Write C++ code here
+    vector<int> v={8,45,2,5,234,5,272,0,86,5,1,9};
+    bubbleSort(v);
+    return 0;
+}
