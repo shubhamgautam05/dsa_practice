@@ -1,0 +1,14 @@
+//Count digits using recursion
+#include <iostream>
+using namespace std;
+int countDigits(int n){
+    if (n < 10) {
+        return 1;
+    }
+    return 1 + countDigits(n / 10);
+}
+int main() {
+    int ans=countDigits(4598);
+    cout<<ans;
+    return 0;
+}
