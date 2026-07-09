@@ -1,0 +1,34 @@
+148. Sort List
+class Solution {
+public:
+    ListNode* merge(ListNode* a, ListNode* b) {
+        if (!a) return b;
+        if (!b) return a;
+
+        if (a->val <= b->val) {
+            a->next = merge(a->next, b);
+            return a;
+        } else {
+            b->next = merge(a, b->next);
+            return b;
+        }
+    }
+
+    ListNode* sortList(ListNode* h) {
+        if (!h || !h->next) return h;
+
+        ListNode *s = h, *f = h->next;
+        while (f && f->next) {
+            s = s->next;
+            f = f->next->next;
+        }
+
+        ListNode* t = s->next;
+        s->next = NULL;
+
+        ListNode* l = sortList(h);
+        ListNode* r = sortList(t);
+
+        return merge(l, r);
+    }
+};
