@@ -1,0 +1,37 @@
+//Implement stack using array
+class myStack {
+    int *a;
+    int t;
+    int n;
+
+  public:
+    myStack(int n) {
+        this->n = n;
+        a = new int[n];
+        t = -1;
+    }
+
+    bool isEmpty() {
+        return t == -1;
+    }
+
+    bool isFull() {
+        return t == n - 1;
+    }
+
+    void push(int x) {
+        if (!isFull())
+            a[++t] = x;
+    }
+
+    void pop() {
+        if (!isEmpty())
+            t--;
+    }
+
+    int peek() {
+        if (isEmpty())
+            return -1;
+        return a[t];
+    }
+};
